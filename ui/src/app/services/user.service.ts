@@ -37,6 +37,10 @@ export class UserService {
                     this.userType = (data as Resp).userType;
                     this.updateUser(this.userName);
                     this.updateUserType(this.userType);
+                    console.log(this.userType);
+                    if(this.userType=='driver')
+                        this.router.navigateByUrl('/acceptbooking');
+                    else if(this.userType!= 'driver')
                     this.router.navigateByUrl('/dashboard');
                 }
             });

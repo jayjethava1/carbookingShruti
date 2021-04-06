@@ -94,7 +94,7 @@
                 <mat-icon>edit</mat-icon>
             </button>
 
-            <button mat-raised-button style="background-color: yellowgreen;" aria-label="Example icon-button with a heart icon" *ngIf="userType=='customer'" (click)="booknow(row)"> 
+            <button mat-raised-button style="background-color: yellowgreen;" (click)="booknow(row)"  aria-label="Example icon-button with a heart icon" *ngIf="userType=='customer'" > 
                 Book Now
             </button>
         </td>

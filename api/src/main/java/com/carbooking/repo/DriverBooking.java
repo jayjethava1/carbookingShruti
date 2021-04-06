@@ -1,27 +1,33 @@
-package com.carbooking.model;
+package com.carbooking.repo;
 
-import org.hibernate.validator.constraints.UniqueElements;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import javax.validation.constraints.NotEmpty;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Date;
 
-public class BookingDto {
+@Entity
+public class DriverBooking {
 
-    @UniqueElements
-    @NotEmpty(message = "booking id can not be null")
+    @Id
+    @GeneratedValue
     private long bookingId;
-    
-    
-
-    @UniqueElements
-    @NotEmpty(message = "dealer id can not be null")
     private String dealerId;
-    
-    @NotEmpty(message = "source can not be null")
+    private String customerId;
+    private String carId;
     private String source;
-    
-    public String getSource() {
+    private String destination;
+    private Date startDate;
+    private Date endDate;
+    private String driverId;
+    public String getDriverId() {
+		return driverId;
+	}
+
+	public void setDriverId(String driverId) {
+		this.driverId = driverId;
+	}
+
+	public String getSource() {
 		return source;
 	}
 
@@ -37,22 +43,7 @@ public class BookingDto {
 		this.destination = destination;
 	}
 
-    @NotEmpty(message = "destination can not be null")
-    private String destination;
-
-    @UniqueElements
-    @NotEmpty(message = "customer id can not be null")
-    private String customerId;
-
-    @UniqueElements
-    @NotEmpty(message = "car id can not be null")
-    private String carId;
-
-    @DateTimeFormat(pattern = "MM/dd/yyyy")
-    private Date startDate;
-
-    @DateTimeFormat(pattern = "MM/dd/yyyy")
-    private Date endDate;
+	
 
     public long getBookingId() {
         return bookingId;
@@ -101,5 +92,4 @@ public class BookingDto {
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
-
 }

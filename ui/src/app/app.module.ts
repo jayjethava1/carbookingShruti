@@ -34,6 +34,8 @@ import {MatListModule} from '@angular/material/list';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { BookComponent } from './components/book/book.component';
+import { AcceptBookingComponent } from './components/accept-booking/accept-booking.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     BooknowDialogComponent,
     BookingComponent,
     ProfileComponent,
-    RegisterComponent
+    RegisterComponent,
+    BookComponent,
+    AcceptBookingComponent
     ],
   imports: [
     BrowserModule,

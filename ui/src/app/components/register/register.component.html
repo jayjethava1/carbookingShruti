@@ -8,6 +8,7 @@
                     <mat-radio-group [formControl]="userTypeFormControl">
                         <mat-radio-button value="customer" checked>Customer</mat-radio-button>
                         <mat-radio-button value="dealer">Dealer</mat-radio-button>
+                        <mat-radio-button value="driver">Driver</mat-radio-button>
                     </mat-radio-group>
                     <mat-divider></mat-divider>
                     <br>
@@ -28,7 +29,7 @@
                     <mat-form-field class="full-width">
                         <input matInput placeholder="Email Address" [formControl]="emailFormControl" [errorStateMatcher]="matcher">
                         <mat-error *ngIf="emailFormControl.hasError('required')">
-                            Contact is <strong>required</strong>
+                            Email is <strong>required</strong>
                         </mat-error>
                     </mat-form-field>
                     <mat-form-field class="full-width">

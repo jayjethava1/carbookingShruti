@@ -1,10 +1,24 @@
 spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: bookcar619@gmail.com
+    password: shrutika@12
+    properties:
+      mail:
+        smtp:
+          auth: true
+          connectiontimeout: 5000
+          timeout: 5000
+          starttls:
+            enable: true
   datasource:
     url: jdbc:mysql://localhost:3306/carbooking
-    password: root1234
+    password: pass
     username: root
     driver-class-name: "com.mysql.jdbc.Driver"
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
       ddl-auto: update
+ 

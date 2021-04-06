@@ -2,10 +2,19 @@
     <mat-drawer-container>
         <mat-drawer [opened]="opened" mode="side">
             <mat-list>
+                <ng-container *ngIf=" userType == 'customer' || userType == 'dealer' ">
                 <mat-list-item [routerLinkActive]="['active']">
                     <mat-icon color="primary" mat-list-icon>directions_car</mat-icon>
                     <p mat-line><a routerLink="/dashboard"> Cars </a></p>
                 </mat-list-item>
+                </ng-container>
+                <!-- <mat-divider></mat-divider> -->
+                <ng-container *ngIf="userType== 'driver'">
+                <mat-list-item  [routerLinkActive]="['active']">
+                    <mat-icon color="primary" mat-list-icon>add_shopping_cart</mat-icon>
+                    <p mat-line><a routerLink="/acceptbooking"> Accept Bookings </a></p>
+                </mat-list-item>
+                </ng-container>
                 <!-- <mat-divider></mat-divider> -->
                 <mat-list-item  [routerLinkActive]="['active']">
                     <mat-icon color="primary" mat-list-icon>add_shopping_cart</mat-icon>

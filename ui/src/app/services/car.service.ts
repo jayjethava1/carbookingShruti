@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Car } from '../models/car.model';
 import { Observable } from 'rxjs';
-import { Booking } from '../models/booking.model';
+import { Booking,DriverBookingModel } from '../models/booking.model';
 import { UserService } from './user.service';
 
 @Injectable({
@@ -52,7 +52,15 @@ export class CarService {
         return this.httpClient.post<Car[]>('http://localhost:8080/booking', booking, {headers});
     }
 
+    public acceptbooking(booking: DriverBookingModel) {
+        const headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8'});
+        return this.httpClient.post<Car[]>('http://localhost:8080/booking/driver', booking, {headers});
+    }
+
     public getMyBookings(user: string): Observable<Booking[]> {
         return this.httpClient.get<Booking[]>('http://localhost:8080/booking/' + this.userType + '/' + user);
+    }
+    public getAllBookings(): Observable<Booking[]> {
+        return this.httpClient.get<Booking[]>('http://localhost:8080/booking/' + this.userType );
     }
 }

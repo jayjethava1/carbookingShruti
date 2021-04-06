@@ -27,7 +27,7 @@ export class BookingComponent {
             this.carService.getMyBookings(this.userService.userName).subscribe(data => {
                 const bookings: Booking[] = data;
                 console.log(data);
-                this.displayedColumns = ['bookingId', 'carId', 'customerId', 'dealerId', 'startDate', 'endDate'];
+                this.displayedColumns = ['bookingId', 'carId', 'customerId', 'dealerId','source', 'destination','startDate', 'endDate'];
                 this.dataSource = new MatTableDataSource(bookings);
 
                 setTimeout(() => {

@@ -6,19 +6,29 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
-public class BookingDto {
+public class DriverBookingDto {
 
     @UniqueElements
     @NotEmpty(message = "booking id can not be null")
     private long bookingId;
     
-    
-
     @UniqueElements
     @NotEmpty(message = "dealer id can not be null")
     private String dealerId;
     
-    @NotEmpty(message = "source can not be null")
+    @UniqueElements
+    @NotEmpty(message = "driver id can not be null")
+    private String driverId;
+    
+    public String getDriverId() {
+		return driverId;
+	}
+
+	public void setDriverId(String driverId) {
+		this.driverId = driverId;
+	}
+
+	@NotEmpty(message = "source can not be null")
     private String source;
     
     public String getSource() {

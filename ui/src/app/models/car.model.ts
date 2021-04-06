@@ -27,4 +27,21 @@ class CarModel implements Car {
         this.dealerId = '';
     }
 }
-export {Car, CarModel};
+class DriverCarModel extends CarModel{
+    customerId: string;
+    carId: string;
+    source: string;
+    destination: string;
+    driverId: string;
+    startDate: Date;
+    endDate: Date;
+    constructor(){
+        super();
+        this.customerId='';
+        this.carId='';
+        this.source='';
+        this.destination='';
+        this.driverId='';
+    }
+}
+export {Car, CarModel,DriverCarModel};

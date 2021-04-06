@@ -11,6 +11,8 @@ class BookingModel implements Booking {
     carId: string;
     customerId: string;
     dealerId: string;
+    source: string;
+    destination: string;
     startDate: Date;
     endDate: Date;
 
@@ -23,4 +25,12 @@ class BookingModel implements Booking {
         this.endDate = new Date();
     }
 }
-export {Booking, BookingModel};
+class DriverBookingModel extends BookingModel{
+    driverId: string;
+    constructor() {
+        super();
+        driverId: '';
+    }
+
+}
+export {Booking, BookingModel,DriverBookingModel};
