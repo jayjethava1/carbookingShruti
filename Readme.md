@@ -54,4 +54,6 @@ Install following before running the app:
 * 3. npm install
 * 4. ng serve --open
 
+test
+
 ## Note: application will execute on http://localhost:4200/
